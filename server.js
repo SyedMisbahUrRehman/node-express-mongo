@@ -1,12 +1,11 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const User = require('./model/User');
-
+require('dotenv').config();
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
-// Replace with your working MongoDB URI (SRV or non-SRV)
-const MONGO_URI = 'mongodb://localhost:27017/node_express_mongo';
+const MONGO_URI = process.env.MONGO_URI;
 
 app.use(express.json());
 
